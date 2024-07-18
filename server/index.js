@@ -137,6 +137,10 @@ app.post("/create-payment-intent", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("server runnnig ");
+});
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("build"));
   app.get("*", (req, res) => {
