@@ -1,0 +1,44 @@
+.container {
+  max-width: 1250px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  padding: 0px 40px;
+  position: relative;
+  clear: both;
+}
+.esv_tm_section {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+}
+.esv_tm_copyright {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  background-color: #ffc448;
+  padding: 25px 0px;
+}
+.esv_tm_copyright .copyright_inner {
+  width: 100%;
+  height: auto;
+  clear: both;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.esv_tm_copyright .logo img {
+  max-width: 170px;
+  max-height: 80px;
+}
+.esv_tm_copyright .copy p {
+  color: var(--main-color);
+  font-size: 16px;
+  font-weight: 500;
+}
+.esv_tm_copyright .copy a {
+  color: var(--main-color);
+}
