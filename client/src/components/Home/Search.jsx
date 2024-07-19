@@ -1,20 +1,21 @@
 export default function Search({ value, onChange }) {
   return (
     <div>
-      <label
+      {/* <label
         htmlFor="search"
         className="block text-sm font-medium text-gray-700"
       >
         Search Products
-      </label>
-      <div className="relative  mt-1 flex items-center">
+      </label> */}
+      <div className="relative dark:bg-gray-900  mt-1 flex items-center">
         <input
           type="text"
           name="search"
           id="search"
           value={value}
           onChange={onChange}
-          className="block w-full rounded-md border-gray-300 pr-12 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          placeholder="Search products..."
+          className="block w-full rounded-md border-gray-300 pr-12 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm dark:text-white dark:bg-gray-700 "
         />
         <div className="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
           <kbd className="inline-flex items-center rounded border border-gray-200 px-2 font-sans text-sm font-medium text-gray-400">

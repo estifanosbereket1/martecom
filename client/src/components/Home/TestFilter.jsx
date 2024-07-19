@@ -128,7 +128,7 @@ export default function TestFilter() {
     ...new Set(products.map((product) => product.productCategory)),
   ];
 
-  const key = process.env.LINK2;
+  const key = process.env.REACT_APP_LINK2;
   console.log(key, "iiiiiiiiiiiiiiiiiiiiiiiiiiiii");
 
   const filterProductsByCat = (cat) => {
@@ -146,7 +146,7 @@ export default function TestFilter() {
   return (
     <>
       {isLoading && <Loader />}
-      <div className="bg-white">
+      <div className="bg-white dark:bg-gray-900">
         <div>
           {/* Mobile filter dialog */}
           <Dialog
@@ -162,14 +162,16 @@ export default function TestFilter() {
             <div className="fixed inset-0 z-40 flex">
               <Dialog.Panel
                 transition
-                className="relative ml-auto flex h-full w-full max-w-xs transform flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl transition duration-300 ease-in-out data-[closed]:translate-x-full"
+                className="relative ml-auto flex h-full w-full max-w-xs transform dark:bg-gray-900 flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl transition duration-300 ease-in-out data-[closed]:translate-x-full"
               >
                 <div className="flex items-center justify-between px-4">
-                  <h2 className="text-lg font-medium text-gray-900">Filters</h2>
+                  <h2 className="text-lg font-medium text-gray-900 dark:text-gray-500 ">
+                    Filters
+                  </h2>
                   <button
                     type="button"
                     onClick={() => setMobileFiltersOpen(false)}
-                    className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400"
+                    className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md dark:bg-gray-900 dark:text-white bg-white p-2 text-gray-400"
                   >
                     <span className="sr-only">Close menu</span>
                     <XMarkIcon aria-hidden="true" className="h-6 w-6" />
@@ -184,7 +186,10 @@ export default function TestFilter() {
                     className="px-2 py-3 font-medium text-gray-900"
                   >
                     {filtersMap.map((cat, index) => (
-                      <li key={index} className="dark:hover:text-gray-500">
+                      <li
+                        key={index}
+                        className="dark:hover:text-gray-500 dark:text-white"
+                      >
                         <button
                           type="button"
                           className={`${
@@ -199,72 +204,43 @@ export default function TestFilter() {
                       </li>
                     ))}
                   </ul>
+                  <div className="mt-5 px-2">
+                    <h1>price</h1>
+                    <p>{`$${price}`}</p>
+                    <div>
+                      <input
+                        type="range"
+                        name="productPrice"
+                        id="productPrice"
+                        value={price}
+                        onChange={(e) => setPrice(e.target.value)}
+                        max={maxPrice}
+                        min={minPrice}
+                      />
+                    </div>
+                  </div>
 
-                  {filters.map((section) => (
-                    <Disclosure
-                      key={section.id}
-                      as="div"
-                      className="border-t border-gray-200 px-4 py-6"
-                    >
-                      <h3 className="-mx-2 -my-3 flow-root">
-                        <Disclosure.Button className="group flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
-                          <span className="font-medium text-gray-900">
-                            {section.name}
-                          </span>
-                          <span className="ml-6 flex items-center">
-                            <PlusIcon
-                              aria-hidden="true"
-                              className="h-5 w-5 group-data-[open]:hidden"
-                            />
-                            <MinusIcon
-                              aria-hidden="true"
-                              className="h-5 w-5 [.group:not([data-open])_&]:hidden"
-                            />
-                          </span>
-                        </Disclosure.Button>
-                      </h3>
-                      <Disclosure.Panel className="pt-6">
-                        <div className="space-y-6">
-                          {section.options.map((option, optionIdx) => (
-                            <div
-                              key={option.value}
-                              className="flex items-center"
-                            >
-                              <input
-                                defaultValue={option.value}
-                                defaultChecked={option.checked}
-                                id={`filter-mobile-${section.id}-${optionIdx}`}
-                                name={`${section.id}[]`}
-                                type="checkbox"
-                                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                              />
-                              <label
-                                htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
-                                className="ml-3 min-w-0 flex-1 text-gray-500"
-                              >
-                                {option.label}
-                              </label>
-                            </div>
-                          ))}
-                        </div>
-                      </Disclosure.Panel>
-                    </Disclosure>
-                  ))}
+                  <div className=" mt-4 px-2">
+                    <ButtonPrimary
+                      onClick={clearFilters}
+                      children="Clear filters"
+                    />
+                  </div>
                 </form>
               </Dialog.Panel>
             </div>
           </Dialog>
 
-          <main className="mx-auto dark:bg-gray-900 max-w-7xl px-4 sm:px-6 lg:px-8">
+          <main className="mx-auto dark:bg-gray-900 max-w-7xl px-4 sm:px-6 lg:px-8 ">
             <h1 className="text-4xl font-bold mt-5  tracking-tight text-gray-900 dark:text-white">
               New Arrivals
             </h1>
-            <div className="flex items-center justify-between border-b border-gray-200 pb-6 pt-14">
-              <h1 className="text-xl  tracking-tight text-gray-900 dark:text-white">
+            <div className="md:flex md:items-center md:justify-between border-b border-gray-200 pb-6 pt-14 sm:flex-col sm:gap-[10px] ">
+              <h1 className="lg:text-xl sm:text-sm md:text-left  tracking-tight text-gray-900 dark:text-white">
                 {filteredProducts.length} Products found
               </h1>
 
-              <div className="lg:w-[60%] ">
+              <div className="lg:w-[60%] my-4 ">
                 <Search
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
@@ -286,13 +262,7 @@ export default function TestFilter() {
                   <option value="A-Z">A-Z</option>
                   <option value="Z-A">Z-A</option>
                 </select>
-                <button
-                  type="button"
-                  className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7"
-                >
-                  <span className="sr-only">View grid</span>
-                  <Squares2X2Icon aria-hidden="true" className="h-5 w-5" />
-                </button>
+
                 <button
                   type="button"
                   onClick={() => setMobileFiltersOpen(true)}
@@ -333,57 +303,6 @@ export default function TestFilter() {
                       </li>
                     ))}
                   </ul>
-
-                  {/* {filters.map((section) => (
-                    <Disclosure
-                      key={section.id}
-                      as="div"
-                      className="border-b border-gray-200 py-6 dark:bg-gray-900"
-                    >
-                      <h3 className="-my-3 flow-root">
-                        <Disclosure.Button className="group  dark:bg-gray-900 flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                          <span className="font-medium text-gray-900 dark:text-white">
-                            {section.name}
-                          </span>
-                          <span className="ml-6 flex items-center">
-                            <PlusIcon
-                              aria-hidden="true"
-                              className="h-5 w-5 group-data-[open]:hidden"
-                            />
-                            <MinusIcon
-                              aria-hidden="true"
-                              className="h-5 w-5 [.group:not([data-open])_&]:hidden"
-                            />
-                          </span>
-                        </Disclosure.Button>
-                      </h3>
-                      <Disclosure.Panel className="pt-6">
-                        <div className="space-y-4">
-                          {section.options.map((option, optionIdx) => (
-                            <div
-                              key={option.value}
-                              className="flex items-center"
-                            >
-                              <input
-                                defaultValue={option.value}
-                                defaultChecked={option.checked}
-                                id={`filter-${section.id}-${optionIdx}`}
-                                name={`${section.id}[]`}
-                                type="checkbox"
-                                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                              />
-                              <label
-                                htmlFor={`filter-${section.id}-${optionIdx}`}
-                                className="ml-3 text-sm text-gray-600"
-                              >
-                                {option.label}
-                              </label>
-                            </div>
-                          ))}
-                        </div>
-                      </Disclosure.Panel>
-                    </Disclosure>
-                  ))} */}
 
                   <div className="mt-5">
                     <h1>price</h1>

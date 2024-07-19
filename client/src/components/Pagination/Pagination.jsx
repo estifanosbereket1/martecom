@@ -43,7 +43,7 @@ export default function Pagination({
   };
 
   return (
-    <nav className="flex items-center justify-between border-t border-gray-200 px-4 sm:px-0">
+    <nav className="flex items-center dark:bg-gray-900 dark:text-white justify-between border-t border-gray-200 px-4 sm:px-0">
       <div className="-mt-px flex w-0 flex-1">
         {currentPage > 1 && (
           <a
@@ -79,10 +79,20 @@ export default function Pagination({
           }
         })}
       </div>
-      <div className="flex justify-end items-end  mx-8">
+
+      {/* <div className="mx-4 my-0">
         <p>
           <span className="text-indigo-500">page {currentPage}</span>of{" "}
           {pageNumbers.length}
+        </p>
+      </div> */}
+
+      <div className="-mt-px flex w-0 flex-1 mx-6">
+        <p className="inline-flex items-center border-t-2 border-transparent pt-4 pr-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+          <span className="mr-3 h-auto w-12 text-indigo-500" aria-hidden="true">
+            page {currentPage}
+          </span>
+          of {pageNumbers.length}
         </p>
       </div>
 

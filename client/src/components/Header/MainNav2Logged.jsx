@@ -15,6 +15,8 @@ import { SET_ACTIVE_USER, selectIsLoggedIn } from "../../redux/slice/authSlice";
 import { useSelector } from "react-redux";
 import AdminOnlyRoute from "../AdminOnlyRoute/AdminOnlyRoute";
 import { AdminOnlyLink } from "../AdminOnlyRoute/AdminOnlyRoute";
+import martecomlogo from "../../assets/mylogo.png";
+
 import {
   CALCULATE_TOTAL_QUANTITY,
   getCartItems,
@@ -95,10 +97,10 @@ const MainNav2Logged = () => {
 
         <a
           href="/"
-          className="lg:flex-1 flex items-center pl-2 dark:text-white text-black font-bold text-2xl hover:cursor-pointer"
+          className="lg:flex-1 flex items-center pl-6 gap-2  dark:text-white text-black font-bold text-2xl hover:cursor-pointer"
         >
-          {/* <Logo className="flex-shrink-0" /> */}
-          {/* Logo here  */}E com
+          <img src={martecomlogo} className="h-16 w-16" alt="logo" />
+          <p className="hidden md:block">Mark Mart</p>
         </a>
 
         <div className="flex-[2] hidden lg:flex justify-center mx-4">
