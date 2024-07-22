@@ -37,36 +37,39 @@ const ProductDetailPage = () => {
 
   const { document } = useFetchDocument("products", id);
 
-  const getProduct = async () => {
-    try {
-      console.log("Fetching product..."); // Log to confirm function call
-      const docRef = doc(db, "products", id);
-      const docSnap = await getDoc(docRef);
+  // const getProduct = async () => {
+  //   try {
+  //     console.log("Fetching product..."); // Log to confirm function call
+  //     const docRef = doc(db, "products", id);
+  //     const docSnap = await getDoc(docRef);
 
-      if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data()); // Log document data
-        const obj = {
-          id: id,
-          ...docSnap.data(),
-        };
-        setProduct(obj);
-      } else {
-        console.log("No such document!"); // Log if no document found
-      }
-    } catch (error) {
-      console.error("Error fetching document:", error); // Log errors
-    }
-  };
+  //     if (docSnap.exists()) {
+  //       console.log("Document data:", docSnap.data()); // Log document data
+  //       const obj = {
+  //         id: id,
+  //         ...docSnap.data(),
+  //       };
+  //       setProduct(obj);
+  //     } else {
+  //       console.log("No such document!"); // Log if no document found
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching document:", error); // Log errors
+  //   }
+  // };
 
   const dispatch = useDispatch();
 
   const cartItems = useSelector(getCartItems);
 
   useEffect(() => {
-    if (id) {
-      getProduct();
+    // if (id) {
+    //   // getProduct();
+    // }
+    if (document) {
+      setProduct(document);
     }
-  }, [id]);
+  }, [document]);
 
   const renderVariants = () => {
     if (!product?.variants || !product.variants.length) {
@@ -256,8 +259,8 @@ const ProductDetailPage = () => {
             </div>
           </div>
         </div>
-        <div className="">{renderVariants()}</div>
-        <div className="">{renderSizeList()}</div>
+        {/* <div className="">{renderVariants()}</div>
+        <div className="">{renderSizeList()}</div> */}
         <div className="flex space-x-3.5">
           <div className="flex items-center justify-center bg-slate-100/70 dark:bg-slate-800/70 px-2 py-3 sm:p-3.5 rounded-full">
             {/* <NcInputNumber
@@ -330,7 +333,7 @@ const ProductDetailPage = () => {
               {renderStatus()}
               {/* <LikeButton className="absolute right-3 top-3 " /> */}
             </div>
-            <div className="grid grid-cols-2 gap-3 mt-3 sm:gap-6 sm:mt-6 xl:gap-8 xl:mt-8">
+            {/* <div className="grid grid-cols-2 gap-3 mt-3 sm:gap-6 sm:mt-6 xl:gap-8 xl:mt-8">
               {[LIST_IMAGES_DEMO[1], LIST_IMAGES_DEMO[2]].map((item, index) => {
                 return (
                   <div
@@ -346,7 +349,7 @@ const ProductDetailPage = () => {
                   </div>
                 );
               })}
-            </div>
+            </div> */}
           </div>
           <div className="w-full lg:w-[45%] pt-10 lg:pt-0 lg:pl-7 xl:pl-9 2xl:pl-10">
             {renderSectionContent()}
