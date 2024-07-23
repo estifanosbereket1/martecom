@@ -28,7 +28,7 @@ export default function OrdersTable() {
   useEffect(() => {
     dispatch(ADD_ORDERS(data));
   }, [dispatch, data]);
-  console.log(orders);
+  // console.log(orders);
 
   const handleClick = (id) => {
     navigate(`/order-details/${id}`);

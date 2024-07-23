@@ -21,7 +21,7 @@ const Collection = ({}) => {
   const { data, isLoading } = useFetchCollection("products");
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
-  console.log(sort);
+  // console.log(sort);
 
   const products = useSelector(selectProducts);
   const filteredProducts = useSelector(selectFilteredProducts);

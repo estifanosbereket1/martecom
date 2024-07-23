@@ -8,14 +8,14 @@ const OrderDetails = () => {
   const { document } = useFetchDocument("orders", id);
   const [order, setOrder] = useState(null);
 
-  console.log(document, "ppppppp");
+  // console.log(document, "ppppppp");
 
   useEffect(() => {
     if (document) {
       setOrder(document);
     }
   }, [document]);
-  console.log(order);
+  // console.log(order);
 
   if (!order) {
     return <div>Loading...</div>; // Render a loading state while the document is being fetched

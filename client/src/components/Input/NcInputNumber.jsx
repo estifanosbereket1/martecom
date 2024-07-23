@@ -13,8 +13,8 @@ const NcInputNumber = ({ className = "w-full", label, desc, val, cart }) => {
     dispatch(ADD_TO_CART(cart));
   };
 
-  console.log(cart, "nnnnnnnnnnnnnnnnnnn");
-  console.log(val);
+  // console.log(cart, "nnnnnnnnnnnnnnnnnnn");
+  // console.log(val);
 
   const renderLabel = () => {
     return (

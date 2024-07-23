@@ -107,7 +107,7 @@ const calculateOrderAmount = (items) => {
 };
 
 app.post("/create-payment-intent", async (req, res) => {
-  console.log("Received request body:", req.body); // Add this line
+  // console.log("Received request body:", req.body); // Add this line
   const { items, shipping, description, customerEmail } = req.body;
 
   try {

@@ -16,8 +16,8 @@ const productSlice = createSlice({
     },
     GET_PRODUCT: (state, action) => {
       const id = action.payload;
-      console.log(action.payload);
-      console.log(id);
+      // console.log(action.payload);
+      // console.log(id);
       state.product = state.products.find((product) => product.id === id);
     },
     SET_PRICES: (state, action) => {

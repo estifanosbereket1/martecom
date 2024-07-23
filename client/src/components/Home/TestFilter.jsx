@@ -99,7 +99,7 @@ export default function TestFilter() {
     indexOfLastProduct
   );
 
-  console.log(filteredProducts);
+  // console.log(filteredProducts);
   useEffect(() => {
     dispatch(
       SET_PRODUCTS({
@@ -129,7 +129,7 @@ export default function TestFilter() {
   ];
 
   const key = process.env.REACT_APP_LINK2;
-  console.log(key, "iiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+  // console.log(key, "iiiiiiiiiiiiiiiiiiiiiiiiiiiii");
 
   const filterProductsByCat = (cat) => {
     setCategory(cat);
@@ -141,7 +141,7 @@ export default function TestFilter() {
     setPrice(maxPrice);
   };
 
-  console.log(filtersMap, "ggggggggggggggggggggggggggggg");
+  // console.log(filtersMap, "ggggggggggggggggggggggggggggg");
 
   return (
     <>

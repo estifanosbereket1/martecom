@@ -60,7 +60,7 @@ const SidebarFilters = () => {
     new Set(products.map((product) => product.productCategory)),
   ];
 
-  console.log(allCategories, "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+  // console.log(allCategories, "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
 
   //
   const [isOnSale, setIsIsOnSale] = useState(true);

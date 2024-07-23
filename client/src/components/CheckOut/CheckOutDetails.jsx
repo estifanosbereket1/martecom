@@ -40,7 +40,7 @@ export default function CheckOutDetails() {
 
   const cartItems = useSelector(getCartItems);
 
-  console.log(cartItems);
+  // console.log(cartItems);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

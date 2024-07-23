@@ -93,13 +93,13 @@ export default function Chart() {
   const orders = useSelector(allOrders);
   const arr = orders.map((order) => order.orderStatus);
 
-  console.log(arr);
+  // console.log(arr);
 
   const getOrderCount = (status, arr) => {
     return arr.filter((item) => item === status).length;
   };
 
-  console.log(getOrderCount("Processing...", arr));
+  // console.log(getOrderCount("Processing...", arr));
 
   const data = [
     {

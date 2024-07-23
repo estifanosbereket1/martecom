@@ -39,7 +39,7 @@ const MainNav2Logged = () => {
           const un = user.email.substring(0, user.email.indexOf("@"));
           const userName = un.charAt(0).toUpperCase() + un.slice(1);
           setName(userName);
-          console.log(name);
+          // console.log(name);
         } else {
           setName(user.displayName);
         }

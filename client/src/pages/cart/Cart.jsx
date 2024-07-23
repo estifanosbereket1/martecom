@@ -53,7 +53,7 @@ const Cart = () => {
     dispatch(SAVE_URL(""));
   }, [dispatch, cartItems]);
 
-  console.log(cartItems, "cartItems");
+  // console.log(cartItems, "cartItems");
   const renderStatusSoldout = () => {
     return (
       <div className="rounded-full flex items-center justify-center px-2.5 py-1.5 text-xs text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
@@ -82,7 +82,7 @@ const Cart = () => {
       productName,
     } = product;
 
-    console.log(product, "ddddddddddddddddddddddd");
+    // console.log(product, "ddddddddddddddddddddddd");
 
     return (
       <div

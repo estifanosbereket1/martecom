@@ -142,11 +142,11 @@ const ProductCard = ({ className = "", data, isLiked }) => {
   const dispatch = useDispatch();
 
   const AddToCart = (data) => {
-    console.log(data, "vvvvvvvvvvvvvvvvvvvvvv");
+    // console.log(data, "vvvvvvvvvvvvvvvvvvvvvv");
     dispatch(ADD_TO_CART(data));
   };
 
-  console.log(data, "paccc niga");
+  // console.log(data, "paccc niga");
 
   const renderGroupButtons = (data) => {
     return (

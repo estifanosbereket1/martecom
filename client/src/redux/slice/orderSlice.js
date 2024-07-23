@@ -10,7 +10,7 @@ const orderSlice = createSlice({
   initialState,
   reducers: {
     ADD_ORDERS: (state, action) => {
-      console.log(action.payload);
+      // console.log(action.payload);
       state.orders = action.payload;
     },
     CALC_TOTAL_ORDERS: (state, action) => {

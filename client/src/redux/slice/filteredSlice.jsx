@@ -55,7 +55,7 @@ const filteredSlice = createSlice({
           tempProduct = products;
       }
       state.filteredProducts = tempProduct;
-      console.log(tempProduct);
+      // console.log(tempProduct);
     },
     FILTER_BY_CAT: (state, action) => {
       const { products, category } = action.payload;
@@ -72,7 +72,7 @@ const filteredSlice = createSlice({
     },
     FILTER_BY_PRICE: (state, action) => {
       const { products, price } = action.payload;
-      console.log(action.payload);
+      // console.log(action.payload);
       let tempProducts = [];
       tempProducts = products.filter(
         (product) => product.productPrice <= price

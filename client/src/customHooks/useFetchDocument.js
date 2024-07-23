@@ -40,8 +40,8 @@ const useFetchDocument = (Document, DocumentId) => {
 
   const fetchDocument = async () => {
     try {
-      console.log("Fetching document..."); // Log to confirm function call
-      console.log("Document:", Document, "DocumentId:", DocumentId); // Log the Document and DocumentId
+      // console.log("Fetching document..."); // Log to confirm function call
+      // console.log("Document:", Document, "DocumentId:", DocumentId); // Log the Document and DocumentId
 
       // Ensure Document and DocumentId are strings
 
@@ -49,14 +49,14 @@ const useFetchDocument = (Document, DocumentId) => {
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data()); // Log document data
+        // console.log("Document data:", docSnap.data()); // Log document data
         const obj = {
           id: DocumentId, // Use the DocumentId directly
           ...docSnap.data(),
         };
         setDocument(obj);
       } else {
-        console.log("No such document!"); // Log if no document found
+        // console.log("No such document!"); // Log if no document found
       }
     } catch (error) {
       console.error("Error fetching document:", error); // Log errors

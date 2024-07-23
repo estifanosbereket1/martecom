@@ -15,7 +15,7 @@ import { toast } from "react-toastify";
 
 const ReviewProducts = () => {
   const { id } = useParams();
-  console.log(id, "hhhhhhhhhhhhhh");
+  // console.log(id, "hhhhhhhhhhhhhh");
   const { document } = useFetchDocument("products", id);
 
   const [rate, setRate] = useState(0);
@@ -25,9 +25,9 @@ const ReviewProducts = () => {
   const products = useSelector(selectProducts);
 
   const product = products.find((item) => item.id === id);
-  console.log(product, "pooooooooooooooooooo");
+  // console.log(product, "pooooooooooooooooooo");
 
-  console.log(document, "mmmmmmmmm");
+  // console.log(document, "mmmmmmmmm");
 
   const submitReview = async (e) => {
     e.preventDefault();
