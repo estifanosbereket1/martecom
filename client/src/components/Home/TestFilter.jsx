@@ -235,7 +235,7 @@ export default function TestFilter() {
             <h1 className="text-4xl font-bold mt-5  tracking-tight text-gray-900 dark:text-white">
               New Arrivals
             </h1>
-            <div className="md:flex md:items-center md:justify-between border-b border-gray-200 pb-6 pt-14 sm:flex-col sm:gap-[10px] ">
+            <div className="md:flex md:items-center lg:flex lg:flex-row md:justify-between border-b border-gray-200 pb-6 pt-14 sm:flex sm:flex-col sm:gap-[10px] ">
               <h1 className="lg:text-xl sm:text-sm md:text-left  tracking-tight text-gray-900 dark:text-white">
                 {filteredProducts.length} Products found
               </h1>
