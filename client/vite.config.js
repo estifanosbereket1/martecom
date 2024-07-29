@@ -21,7 +21,7 @@
 
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
-import commonjs from "@rollup/plugin-commonjs"; // Import the commonjs plugin
+// import commonjs from "@rollup/plugin-commonjs"; // Import the commonjs plugin
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -32,7 +32,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       react(),
-      commonjs(), // Add the CommonJS plugin
+      // commonjs(), // Add the CommonJS plugin
     ],
     build: {
       sourcemap: true, // Enable source maps for better debugging
