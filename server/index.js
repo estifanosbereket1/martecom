@@ -76,18 +76,6 @@ dotenv.config();
 const app = express();
 const stripe = new Stripe(process.env.REACT_APP_STRIPE_SK);
 
-// const whitelist = ["http://localhost:5173", "https://mart-ec.vercel.app"];
-
-// const corsOptions = {
-//   origin: (origin, callback) => {
-//     if (whitelist.indexOf(origin) !== -1 || !origin) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error("Not allowed by CORS"));
-//     }
-//   },
-// };
-
 app.use(cors());
 
 app.use(express.json());

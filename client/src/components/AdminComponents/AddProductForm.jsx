@@ -67,10 +67,20 @@ export default function AddProductForm({ id }) {
     }
   }, [quill]);
 
+  // useEffect(() => {
+  //   if (quill && product.productDescription) {
+  //     quill.clipboard.dangerouslyPasteHTML(product.productDescription);
+  //     quill.setSelection(quill.getLength());
+  //   }
+  // }, [quill, product.productDescription]);
+
   useEffect(() => {
     if (quill && product.productDescription) {
-      quill.clipboard.dangerouslyPasteHTML(product.productDescription);
-      quill.setSelection(quill.getLength()); // Move the cursor to the end
+      const currentContent = quill.root.innerHTML;
+      if (currentContent !== product.productDescription) {
+        quill.clipboard.dangerouslyPasteHTML(product.productDescription);
+        quill.setSelection(quill.getLength()); // Move the cursor to the end
+      }
     }
   }, [quill, product.productDescription]);
 
