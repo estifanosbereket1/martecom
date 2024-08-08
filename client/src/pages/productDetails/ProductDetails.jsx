@@ -31,7 +31,7 @@ const LIST_IMAGES_DEMO = [detail1JPG, detail2JPG, detail3JPG];
 
 const ProductDetailPage = () => {
   const { id } = useParams();
-  console.log("Product ID from URL:", id); // Log the ID to ensure it's correctly extracted
+  // console.log("Product ID from URL:", id); // Log the ID to ensure it's correctly extracted
   const [product, setProduct] = useState(null);
   const [sizeSelected, setSizeSelected] = useState(null);
 

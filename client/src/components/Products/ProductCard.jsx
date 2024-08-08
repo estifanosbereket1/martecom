@@ -146,8 +146,6 @@ const ProductCard = ({ className = "", data, isLiked }) => {
     dispatch(ADD_TO_CART(data));
   };
 
-  // console.log(data, "paccc niga");
-
   const renderGroupButtons = (data) => {
     return (
       <div className="absolute bottom-0 group-hover:bottom-4 inset-x-1 flex justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
@@ -186,6 +184,22 @@ const ProductCard = ({ className = "", data, isLiked }) => {
     );
   };
 
+  const limitWords = (htmlString, wordLimit) => {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = htmlString;
+    const textContent = tempDiv.textContent || tempDiv.innerText || "";
+    const words = textContent.split(" ");
+    return (
+      words.slice(0, wordLimit).join(" ") +
+      (words.length > wordLimit ? "..." : "")
+    );
+  };
+
+  <div
+    className="text-sm text-slate-500 dark:text-slate-400 mt-1"
+    dangerouslySetInnerHTML={{ __html: limitWords(productDescription, 20) }}
+  />;
+
   return (
     <>
       <div
@@ -216,10 +230,12 @@ const ProductCard = ({ className = "", data, isLiked }) => {
             <h2 className="nc-ProductCard__title text-base font-semibold transition-colors">
               {productName}
             </h2>
-            <div
+            {/* <div
               className="text-sm text-slate-500 dark:text-slate-400 mt-1"
-              dangerouslySetInnerHTML={{ __html: productDescription }}
-            />
+              dangerouslySetInnerHTML={{
+                __html: limitWords(productDescription, 20),
+              }}
+            /> */}
           </div>
 
           <div className="flex justify-between items-end ">

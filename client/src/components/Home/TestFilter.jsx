@@ -91,7 +91,7 @@ export default function TestFilter() {
 
   //pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage, setProductsPerPage] = useState(5);
+  const [productsPerPage, setProductsPerPage] = useState(9);
   const indexOfLastProduct = productsPerPage * currentPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = filteredProducts.slice(

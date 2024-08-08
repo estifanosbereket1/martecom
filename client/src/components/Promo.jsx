@@ -79,18 +79,18 @@ export default function Promo() {
             id="sale-heading"
             className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl"
           >
-            Get 25% off during our one-time sale
+            Mark Mart E-commerce Platform
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-xl text-gray-600">
-            Most of our products are limited releases that won't come back. Get
-            your favorite items while they're in stock.
+            An E-commerce platform to give our customers convinient shopping
+            experience through enhanced user experience
           </p>
-          <a
+          {/* <a
             href="#"
             className="mt-6 mb-8 inline-block w-full rounded-md border border-transparent bg-gray-900 py-3 px-8 font-medium text-white hover:bg-gray-800 sm:w-auto"
           >
             Get access to our one-time sale
-          </a>
+          </a> */}
         </div>
       </section>
 
