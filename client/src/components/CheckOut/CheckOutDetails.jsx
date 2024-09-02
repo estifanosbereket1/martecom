@@ -133,12 +133,14 @@ export default function CheckOutDetails() {
 
               <div className="flex items-center justify-between">
                 <dt className="text-gray-600">Taxes</dt>
-                <dd>$26.80</dd>
+                <dd>${parseInt(cartTotalPrice * 0.15)}</dd>
               </div>
 
               <div className="flex items-center justify-between border-t border-gray-200 pt-6">
                 <dt className="text-base">Total</dt>
-                <dd className="text-base">$361.80</dd>
+                <dd className="text-base">
+                  ${parseInt(cartTotalPrice * 0.15) + cartTotalPrice + 15}
+                </dd>
               </div>
             </dl>
 
@@ -147,7 +149,9 @@ export default function CheckOutDetails() {
                 <div className="mx-auto max-w-lg">
                   <Popover.Button className="flex w-full items-center py-6 font-medium">
                     <span className="mr-auto text-base">Total</span>
-                    <span className="mr-2 text-base">$361.80</span>
+                    <span className="mr-2 text-base">
+                      ${parseInt(cartTotalPrice * 0.15) + cartTotalPrice + 15}
+                    </span>
                     <ChevronUpIcon
                       className="h-5 w-5 text-gray-500"
                       aria-hidden="true"
@@ -193,7 +197,7 @@ export default function CheckOutDetails() {
 
                         <div className="flex items-center justify-between">
                           <dt className="text-gray-600">Taxes</dt>
-                          <dd>$26.80</dd>
+                          <dd>${parseInt(cartTotalPrice * 0.15)}</dd>
                         </div>
                       </dl>
                     </Popover.Panel>
